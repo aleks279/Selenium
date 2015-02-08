@@ -1,0 +1,10 @@
+<%= simple_form_for @article do |f| %>
+    <% if @article.errors.any? %>
+        <%= f.error_notification %>
+    <% end %>
+
+    <%= f.input :title %>
+    <%= f.input :text %>
+
+    <%= f.submit %>
+<% end %>
