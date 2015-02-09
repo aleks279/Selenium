@@ -65,9 +65,9 @@ describe ArticlesController do
         }.to change(Article.all, :count).by(1)
       end
 
-      it "renders the show page" do
+      it "redirects to index page" do
         post :create, article: article_params
-        expect(response).to render_template(:show)
+        expect(response).to redirect_to(articles_path)
       end
     end
 

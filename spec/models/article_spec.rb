@@ -1,4 +1,4 @@
-# require 'rails_helper'
+require 'rails_helper'
 
 describe Article do
   describe 'validations' do
@@ -7,6 +7,6 @@ describe Article do
   end
 
   describe 'associations' do
-
+    it { should have_many(:comments) }
   end
 end
