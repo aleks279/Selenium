@@ -43,4 +43,5 @@ end
 gem 'awesome_print', group: [:development, :test]
 
 gem 'simple_form', '~> 3.1.0'
+gem 'capybara', '~> 2.4.4'
 
