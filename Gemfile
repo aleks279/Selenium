@@ -37,6 +37,7 @@ group :test do
   gem 'faker', '~> 1.4.3'
   gem 'database_cleaner', '~> 1.3.0'
   gem 'simplecov', :require => false
+  gem 'testingbot', '~> 0.1.5'
 end
 
 gem 'awesome_print', group: [:development, :test]
