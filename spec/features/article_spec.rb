@@ -1,6 +1,6 @@
 require "rails_helper"
 
-describe "create new article", :type => :feature do
+describe "article", :type => :feature do
   it "successfully creates a new article" do
     visit '/articles/new'
     within('#new_article') do
