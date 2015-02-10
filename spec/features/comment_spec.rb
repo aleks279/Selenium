@@ -13,6 +13,8 @@ describe "comment", :type => :feature do
     end
 
     click_button 'Create Comment'
+
+    expect(current_path).to eq(article_path(article.id))
     expect(page).to have_content 'This is the author'
   end
 

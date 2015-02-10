@@ -9,7 +9,9 @@ describe "article", :type => :feature do
     end
 
     click_button 'Create Article'
-    expect(page).to have_content 'Articles'
+
+    expect(current_path).to eq(articles_path)
+    expect(page).to have_content 'This is an article'
   end
 
   it "fails to create an article" do
@@ -20,7 +22,8 @@ describe "article", :type => :feature do
     end
 
     click_button 'Create Article'
-    expect(page).to have_content 'New Article'
+
+    expect(page).to have_content "review the problems below"
   end
 
   context "edit existing article" do
@@ -35,7 +38,9 @@ describe "article", :type => :feature do
       end
 
       click_button 'Update Article'
-      expect(page).to have_content 'Title: New title'
+
+      expect(current_path).to eq(article_path(article.id))
+      expect(page).to have_content 'New body'
     end
 
     it "fails to update an existing article" do
@@ -47,7 +52,7 @@ describe "article", :type => :feature do
       end
 
       click_button 'Update Article'
-      expect(page).to have_content 'Edit Article'
+      expect(page).to have_content 'review the problems below'
     end
   end
 end
