@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+ruby '2.0.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.1.7'
@@ -26,8 +27,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
 group :development do
   gem 'spring'
-  gem "better_errors", '~> 2.0.0'
-  gem "binding_of_caller"
+  gem 'better_errors', '~> 2.0.0'
+  gem 'binding_of_caller'
 end
 
 group :test do
