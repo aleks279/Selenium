@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-describe "comment", :type => :feature do
+describe 'comment', :type => :feature do
 
   let(:article) { FactoryGirl.create(:article) }
 
-  it "successfully creates a new comment" do
+  it 'successfully creates a new comment' do
     visit "/articles/#{article.id}"
 
     within('#new_comment') do
@@ -18,7 +18,7 @@ describe "comment", :type => :feature do
     expect(page).to have_content 'This is the author'
   end
 
-  it "fails to create a comment" do
+  it 'fails to create a comment' do
     visit "/articles/#{article.id}"
 
     within('#new_comment') do

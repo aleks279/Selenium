@@ -1,7 +1,7 @@
-require "rails_helper"
+require 'rails_helper'
 
-describe "article", :type => :feature do
-  it "successfully creates a new article" do
+describe 'article', :type => :feature do
+  it 'successfully creates a new article' do
     visit '/articles/new'
     within('#new_article') do
       fill_in 'article_title', :with => 'This is an article'
@@ -14,7 +14,7 @@ describe "article", :type => :feature do
     expect(page).to have_content 'This is an article'
   end
 
-  it "fails to create an article" do
+  it 'fails to create an article' do
     visit '/articles/new'
     within('#new_article') do
       fill_in 'article_title', :with => ''
@@ -23,13 +23,13 @@ describe "article", :type => :feature do
 
     click_button 'Create Article'
 
-    expect(page).to have_content "review the problems below"
+    expect(page).to have_content 'review the problems below'
   end
 
-  context "edit existing article" do
+  context 'edit existing article' do
     let(:article) { FactoryGirl.create(:article) }
 
-    it "successfully updates an existing article" do
+    it 'successfully updates an existing article' do
       visit "articles/#{article.id}/edit"
 
       within("#edit_article_#{article.id}") do
@@ -43,7 +43,7 @@ describe "article", :type => :feature do
       expect(page).to have_content 'New body'
     end
 
-    it "fails to update an existing article" do
+    it 'fails to update an existing article' do
       visit "articles/#{article.id}/edit"
 
       within("#edit_article_#{article.id}") do
